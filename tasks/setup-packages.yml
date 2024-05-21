@@ -1,0 +1,17 @@
+---
+- name: Install required dependencies
+  ansible.builtin.package:
+    name: "{{ dependency }}"
+    state: present
+  loop: "{{ dependencies }}"
+  loop_control:
+    loop_var: dependency
+  register: package_install
+  until: package_install is succeeded
+  retries: 3
+  delay: 5
+
+- name: Ensure all packages are installed successfully
+  ansible.builtin.fail:
+    msg: "Package installation failed."
+  when: package_install is failed

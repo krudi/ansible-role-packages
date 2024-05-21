@@ -1,0 +1,7 @@
+---
+dependencies:
+  - "git"
+  - "nano"
+  - "unzip"
+  - "curl"
+  - "wget"

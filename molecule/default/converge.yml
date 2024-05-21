@@ -1,0 +1,19 @@
+---
+- name: Converge
+  hosts: all
+
+  pre_tasks:
+    - name: Ensure APT package cache is updated
+      ansible.builtin.apt:
+        upgrade: yes
+        update_cache: true
+        cache_valid_time: 86400
+
+  roles:
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+      dependencies:
+        - "git"
+        - "nano"
+        - "unzip"
+        - "curl"
+        - "wget"

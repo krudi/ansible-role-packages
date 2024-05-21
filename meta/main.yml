@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  role_name: packages
+  description: A role for Ansible, that installs predefined set of packages on the system.
+  license: MIT
+  min_ansible_version: "2.0"
+  author: krudi
+  platforms:
+    - name: Ubuntu
+      versions:
+        - jammy
+        - noble
+
+  galaxy_tags:
+    - apt
+    - package
+
+dependencies: []
