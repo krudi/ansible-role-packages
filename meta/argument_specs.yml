@@ -1,0 +1,14 @@
+---
+argument_specs:
+  main:
+    short_description: Install a predefined set of packages.
+    options:
+      dependencies:
+        type: list
+        elements: str
+        default:
+          - git
+          - nano
+          - unzip
+          - curl
+          - wget

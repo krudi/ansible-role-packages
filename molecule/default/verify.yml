@@ -1,0 +1,13 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Check git binary is available
+      ansible.builtin.command: git --version
+      register: git_version
+      changed_when: false
+
+    - name: Check curl binary is available
+      ansible.builtin.command: curl --version
+      register: curl_version
+      changed_when: false
