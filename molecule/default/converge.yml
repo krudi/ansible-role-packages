@@ -10,7 +10,7 @@
         cache_valid_time: 86400
 
   roles:
-    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}"
       dependencies:
         - "git"
         - "nano"
