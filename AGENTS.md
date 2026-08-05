@@ -39,19 +39,9 @@ molecule test      # full test (if molecule configured)
 
 ## Rules
 
-@.ai/rules/ansible.md
+@.ai/rules/ansible.md @.ai/memory/lessons.md @.ai/skills/commit/SKILL.md @.ai/skills/pr/SKILL.md @.ai/skills/retrospective/SKILL.md
 
----
-
-## For Claude Code
-
-### Rules loaded automatically
-
-| Rule file | Applied to |
-|-----------|---|
-| `.ai/rules/ansible.md` | `**/*.yml`, `**/*.yaml` |
-
-### Constraints
+## Constraints
 
 - Package list comes from `defaults/main.yml` — never hardcode package names in tasks
 - Check platform conditionals before adding packages — this role supports Debian/Ubuntu and RHEL/Fedora
