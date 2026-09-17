@@ -27,6 +27,18 @@ Example use of a role that installs a predefined set of packages on the system.
         - "wget"
 ```
 
+## Role variables
+
+| Variable       | Default                                    | Description                                |
+| -------------- | -------------------------------------------- | -------------------------------------------- |
+| `dependencies` | `["git", "nano", "unzip", "curl", "wget"]`  | The list of packages to install on the system. |
+
+See `defaults/main.yml` for the current defaults.
+
+## Testing
+
+This role includes a [Molecule](https://ansible.readthedocs.io/projects/molecule/) test scenario under `molecule/default`. Run it with `molecule test` (requires Docker and provisions real containers, so run it deliberately rather than as part of routine checks).
+
 ## Issue
 
 Have you found a bug in this project or have a suggestion for a new feature? Create a new ticket for the bug or feature, which can be found on the [GitHub](https://github.com/krudi/ansible-role-packages/issues) page.
