@@ -2,12 +2,18 @@
 - name: Verify
   hosts: all
   tasks:
-    - name: Check git binary is available
-      ansible.builtin.command: git --version
-      register: git_version
-      changed_when: false
+    - name: Gather installed packages
+      ansible.builtin.package_facts:
+        manager: auto
 
-    - name: Check curl binary is available
-      ansible.builtin.command: curl --version
-      register: curl_version
-      changed_when: false
+    - name: Assert every converged package is installed
+      ansible.builtin.assert:
+        that:
+          - item in ansible_facts.packages
+        fail_msg: "{{ item }} is not installed"
+      loop:
+        - git
+        - nano
+        - unzip
+        - curl
+        - wget
