@@ -10,7 +10,7 @@ description:
 ## Steps
 
 1. Run `git status` and `git diff HEAD` to understand all changes
-2. Run `git log --oneline -5` to match recent commit style
+2. Run `git log --oneline -5` to match recent commit style and scopes
 3. Draft a commit message:
    - `type(scope): subject` — a short, professional subject naming the concrete change: imperative, lowercase, ≤ 70 chars
    - Body: at most one short line saying why, only when it is not obvious; no bullets
@@ -20,14 +20,15 @@ description:
 
 ## Types
 
-`feat` · `fix` · `docs` · `style` · `refactor` · `perf` · `test` · `build` · `ci` · `chore` · `revert`
+`feat` · `fix` · `docs` · `style` · `refactor` · `perf` · `test` · `build` · `ci` · `chore` · `revert`, plus any extra
+type the repository's `commit-msg` hook allows
 
 ## Scopes
 
-Use practical scopes such as `ci`, `deps`, `tooling`, `vscode`, or `agents`; omit the scope when none fits.
+Use the area the change touches, as recent commits do; omit the scope when none fits.
 
 ## Never
 
 - Skip hooks (`--no-verify`)
 - Amend existing commits unless explicitly asked
-- Stage `.env` files or secrets
+- Stage `.env` files, secrets, credentials, generated output or unrelated changes

@@ -25,3 +25,4 @@ description:
 - Force-push (`--force`)
 - Use a title that doesn't follow conventional commit format
 - Create a PR from `main` or `master`
+- Include secrets, `.env` contents, credentials or client data
